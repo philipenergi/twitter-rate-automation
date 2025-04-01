@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 
@@ -11,9 +12,8 @@ app.use((req, res, next) => {
   next();
 });
 
-const BEARER_TOKEN =
-  "AAAAAAAAAAAAAAAAAAAAAG7q0AEAAAAACC9kPSaP1eHFtPDJcftafUpWpYY%3DJb0dJokxGs4Fhzjc6kXSnwD1jGUO7BTAGWZZPgFRdlMfkw0yXx";
-const CEO_USERNAME = "TommyWorldPower";
+const BEARER_TOKEN = process.env.BEARER_TOKEN;
+const CEO_USERNAME = process.env.CEO_USERNAME;
 
 app.get("/", async (req, res) => {
   try {
